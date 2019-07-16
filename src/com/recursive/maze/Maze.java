@@ -46,8 +46,9 @@ public class Maze {
     }
 
     /**
-     * @param  row,  col
-     *            递归方法，求解迷宫路径
+     * @param row
+     * @param col
+     *  递归方法，求解迷宫路径
      */
     public boolean traverse(int row, int col) {
         ++cur;
