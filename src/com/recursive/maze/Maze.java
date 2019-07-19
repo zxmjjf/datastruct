@@ -27,7 +27,8 @@ public class Maze {
     private Random random = new Random();
 
     /**
-     * 构造函数
+     * 构造函数:
+     * 初始化迷宫，随机数
      */
     public Maze(){
         for (int row = 0; row < grid.length; row++) {
@@ -55,12 +56,16 @@ public class Maze {
         boolean done = false;
 
         if (valid(row, col)) {
-            grid[row][col] = TRIED; //把走过的块设为3
+            /*如果当前的格子不为墙或不为已经走过的，则进行下一步操作*/
+            grid[row][col] = TRIED; /*当前格子可行，设为已走过的*/
 
+            /*判断当前格子是否已经是出口*/
             if (row == grid.length - 1 && col == grid[0].length - 1) {
-                done = true;
+                done = true; /*到达出口则done值为true*/
             }else {
+                /*不是，则在走下一个格子，分别以当前格子为基准，下，右，上，坐的顺序继续走*/
                 done = traverse(row + 1, col);
+                //只要done值不为true，则说明还没到终点
                 if (!done) {
                     done = traverse(row, col + 1);
                 }

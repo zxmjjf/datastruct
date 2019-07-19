@@ -1,0 +1,27 @@
+用 1，2，3，4分别表示 下 ，右, 上, 左
+ 第一次假定为1，即由下进入，则相对于当前块，不需要向上寻找，
+    第二次是由1开始，即由下开始
+    如果在某一位置此时递归调用的方向为3，即左，则最终相对此位置他不需要右寻找。
+
+    traverseMode1
+       的下一步查找不用traverseModel
+       travarseMode1
+       travarseMode2
+       travarseMode3
+
+    travarseMode2
+        travarseMode1
+        travarseMode2
+        travarseMode4
+
+    travarseMode3
+        travarseMode1
+        travarseMode3
+        travarseMode4
+
+    travarseMode4
+        travarseMode2
+        travarseMode2
+        travarseMode4
+
+

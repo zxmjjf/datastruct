@@ -1,4 +1,4 @@
-package com.helppackage;
+package helppackage;
 
 
 public class TestforRandom {

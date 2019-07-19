@@ -1,0 +1,32 @@
+1》以第一个元素作为分割点，递归调用解决方案，
+    参数：子段，起始下标，和最后下标
+    [33, 16, 8, 9, 7, 153, 94, 65, 8, 13, 99, 647, -5, 0, 113, -17, 3, 19, 31, 6]
+    [33, 16, 8, 9, 7, 6, 94, 65, 8, 13, 99, 647, -5, 0, 113, -17, 3, 19, 31, 153]
+    [33, 16, 8, 9, 7, 6, 31, 65, 8, 13, 99, 647, -5, 0, 113, -17, 3, 19, 64, 153]
+    [33, 16, 8, 9, 7, 6, 31, 19, 8, 13, 3, 647, -5, 0, 113, -17, 99, 65, 64, 153]
+    [0, 16, 8, 9, 7, 6, 31, 19, 8, 13, 3, -17, -5, 33, 113, 647, 99, 65, 64, 153]
+
+
+
+
+    quickSort(arrays, 0, arrays.length-1);
+
+    quickSort(int[] arrays,int left, int right){
+        if(left == right){
+            return arrays;
+        }else {
+            int standard = arrays[0];
+            int[] result = new [right-left+1];
+
+            for(int i = left; i <= right; ++i){
+                if(arrays[i] <= standard){
+                    result[left++] = arrays[i];
+                }else {
+                    result[right--] = arrays[i];
+                }
+
+            }
+            return
+        }
+
+    }

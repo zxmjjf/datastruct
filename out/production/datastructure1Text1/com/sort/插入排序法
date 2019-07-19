@@ -1,0 +1,26 @@
+for(int index = 1; index < dataArrays.length; ++index){
+    dataArray key = data[index]; //保留当前值
+    int position = index;
+
+    while (position > 0 && dataArrays[position - 1].comparaTo(key) > 0){
+        //position游标：如果不是第一个元素，且比前面一个元素小，则将其值改为前面元素的值，position位置前移（左移）
+        dataArrays[position] = dataArrays[position - 1];
+        position--;
+    }
+    dataArray[position] = key;
+
+}
+
+算法分析：
+4 1 3 2 6 9 4 8 3
+
+index = 1:
+1 4 3 2 6 9 4 8 3
+index = 2
+1 3 4 2 6 9 4 8 3
+
+index = 3
+    1 3 4 2 》position = 3,key = 2
+    1 3 4 4 》position = 2 ,dataArrays[position] = key
+    1 3 2 4
+
